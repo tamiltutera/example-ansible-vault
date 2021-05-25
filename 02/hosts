@@ -1,0 +1,17 @@
+[webservers]
+ansnode1 ansible_ssh_host=192.168.56.202 ansible_python_interpreter=/usr/bin/python
+ansnode2 ansible_ssh_host=192.168.56.203 ansible_python_interpreter=/usr/bin/python
+
+[webservers:vars]
+ansible_port=22
+http_port=8080
+
+[dbservers]
+ansnode3 ansible_ssh_host=192.168.56.204 ansible_python_interpreter=/usr/bin/python
+ansnode4 ansible_ssh_host=192.168.56.205 ansible_python_interpreter=/usr/bin/python
+
+
+
+[dev:children]
+webservers
+dbservers
